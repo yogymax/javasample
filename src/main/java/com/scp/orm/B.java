@@ -6,5 +6,6 @@ public class B {
 		System.out.println("inside b");
 		System.out.println("inside C");
 		System.out.println("inside D");
+		System.out.println("inside F");
 	}
 }
