@@ -1,0 +1,159 @@
+
+	<hibernate-configuration>
+			<sessionfactory>
+			<mandatory
+					<property name="hibernate.username">root</property>
+					<property name="hibernate.password">root</property>
+					<property name="hibernate.url">dburl</property>
+					<property name="hibernate.driverclass">driverclass vendor specific jar</property>
+					<property name="hibernate.dialect">dialect name for database</property>
+					<mapping resource = "mapping file"/>
+			</sessionfactory>
+	</hibernate-configuration>
+	
+	
+	<hibernate-mapping>
+		<class name="fullyqualified classname" table="tablename">
+				<id name="empId" column="emp_id">--primary key
+				<property name="javafieldname" column="tablecolumnname" type="int">
+				<property name="javafieldname" column="tablecolumnname" type="string">
+		</class>
+	</hibernate-mapping>
+	
+	
+	<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+      <property name = "hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+      <property name = "hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+      <property name = "hibernate.connection.url">jdbc:mysql://localhost/test</property>
+      <property name = "hibernate.connection.username">root</property>
+      <property name = "hibernate.connection.password">root123</property>
+      <mapping resource = "Employee.hbm.xml"/>
+   </session-factory>
+</hibernate-configuration>
+
+
+
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name = "Employee" table = "EMPLOYEE">
+      <id name = "id" type = "int" column = "id"></id>
+      <property name = "firstName" column = "first_name" type = "string"/>
+      <property name = "lastName" column = "last_name" type = "string"/>
+      <property name = "salary" column = "salary" type = "int"/>
+   </class>
+</hibernate-mapping>
+
+
+
+
+jdbc vs hibernate
+mappings file
+configuration file 
+
+
+	
+	
+1 -- sessionfactory -- maximum -- can hold to 1 database
+
+1 application can have n databases
+	n sessionfactories--
+	
+
+CRUD --- 
+
+
+	
+	
+Load the drivers			Class.forName("driverclass from jar")
+Create the Connection		Connection con = DriverManager.getConnection(url,username,passwrd)
+Create Statement/PStmt		Statement stmt  = con.createStatement()
+Execute query 				RS - stmt.executeQuery() -- select
+close resources...			int stmt.executeUpdate() -- insert/update/delete/createtable and so on
+							boolean stmt.execute() -- both
+							close rs/st/conn
+							
+	JDBC
+		Query -- Developer
+		insert into Empinfo values(101,'A') -- coln- field
+		
+	Object ----- 					relational database
+									row/column --tables-- database
+java					mysql/oracle	
+packages				database
+	class				table
+	fields				colns
+	objects				rows
+	
+	list[obj] ---- no of rows
+	obj--5 fields		10 -- 5 column
+	
+	
+	
+hibernate -- 
+	ORM -- 
+			
+		JDBC -- 
+				sql knowledge						--novice
+				mapping self -- always  -- once
+				jdbc - mysql -- 15-- oracle  -- 	database independent [minor]
+					rework -- all queries..might not work -- No
+					lots of code changes	 --No
+				boilerplatecode -- 			--No -- internally execetion handled
+											
+												
+				never object oriented features. -- support
+						class
+						object
+						inheritance
+						association -- mappings
+											11
+											1m
+											M1
+											MM
+			  collection - cannot understand--		-- support
+			  jdbc database dependent			-- support
+		
+		ORM -- concept
+			Hibernate - 
+					
+			
+			 JDBC -- 
+					fast -- application faster
+					dev-- slow
+					
+									convert -- 	convert --   
+		java -- class -- object--- hibernate--- hql -- sql -- database
+		
+		processing nahiye...directly communication with db
+		java class object-- sql ----------db
+		
+	
+	
+Hibernate Steps --	 2 - xml -- 
+	
+	hibernate.cfg.xml-- jdbc --mysql/oracle
+			driverclass --  specific to vendors
+			machineipaddres -- localhost
+			port				3306
+			username			root
+			password			root
+	mapping.xml
+			class -- table
+				fields -- column
+				
+	hibernate.cfg.xml -- database configuration
+	mapping.xml -- mappings -- orm
+	
+	
+ormsports--
+		pom.xml --- hiernate -- database
+
+
+

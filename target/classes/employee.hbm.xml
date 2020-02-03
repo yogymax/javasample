@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name = "com.scp.orm.EmpInfo" table = "emp_orm_info">
+      <id name = "empId" type = "int" column = "id"></id>
+      <property name = "empName" column = "first_name" type = "string"/>
+      <property name = "empAddress" column = "emp_city" type = "string"/>
+      <property name = "empSalary" column = "emp_salary" type = "double"/>
+   </class>
+</hibernate-mapping>
